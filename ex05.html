@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+function change() {
+    var text=getStr("text");
+    var searchOne=getStr("search");
+    var replaceChar=getStr("replacement");
+    var result=rep(text,searchOne,replaceChar);
+    document.getElementById("result").value=result;
+}
+function getStr(id) {
+    var text=document.getElementById(id).value;
+    return text;
+
+}
+function rep(text,searchOne,replaceChar) {
+    var regS=new RegExp(searchOne,"g");
+    var result=text.replace(regS,replaceChar);
+    return result;
+}
+</script>
+<body>
+<p>字符串替换工具</p>
+<table>
+    <tr>
+        <td>源字符串：</td><td><textarea rows="2" cols="50" id="text"></textarea></td>
+    </tr>
+    <tr>
+        <td>查询</td><td><input type="text" id="search"></td>
+    </tr>
+    <tr>
+        <td>替换为</td><td><input type="text" id="replacement"></td>
+    </tr>
+    <tr>
+        <td>替换结果</td><td><textarea id="result" rows="2" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+           <input type="button" value="替换" onclick="change()">
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
