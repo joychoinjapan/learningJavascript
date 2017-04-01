@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Insert the data at the last position and get the data (delete after fetching)-->
+<script>
+    function p(s) {
+        document.write(s);
+        document.write("<br>");
+    }
+
+    var x=new Array(3,1,4);
+    p("Array x is:" +x);
+    x.push(5);
+    p("push 5 into Array x,the result is "+x);
+    var e=x.pop();
+    p("pop out from x,the value is"+e);
+    p("after pop out,the Array x is"+x);
+</script>
+<!--Insert data at the beginning and get the data (delete after fetching)-->
+<script>
+    function p(s) {
+        document.write(s);
+        document.write("<br>");
+    }
+    var x=new Array(3,1,4);
+    p("Array x is:"+x);
+    x.unshift(5);
+    p("add value 5 on the beginning of array,the array becomes:"+x);
+    var e=x.shift();
+    p("shift a value from array(the beginning),the value is:"+e);
+    p("the array becomes:"+x);
+
+</script>
+<!--Custom sorting algorithm-->
+<script>
+    function p(s) {
+        document.write(s);
+        document.write("<br>");
+    }
+    function comparator(v1,v2) {
+        return v2-v1;
+    }
+    p("array is:"+x);
+    x.sort(comparator);
+    p("Use sort to customize the array :"+x);
+</script>
+
+</body>
+</html>
