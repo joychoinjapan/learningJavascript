@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script>
+    function cal() {
+        var today=new Date();
+        var year=today.getFullYear();
+        var month=today.getMonth();
+        var day=today.getDay();
+
+        var birYear=getValue("year");
+        var birMonth=getValue("month");
+        var birDay=getValue("day");
+        var age=0;
+        if(birMonth<month){
+            age=year-birYear;
+        }else if(birMonth==month){
+            if(day>=birDay){
+                age=year-birYear;
+            }else {
+                age=year-birYear-1;
+            }
+        }else {
+            age=year-birYear-1;
+        }
+
+        document.getElementById("age").innerHTML=age;
+
+    }
+    function getValue(id) {
+       return document.getElementById(id).value;
+    }
+</script>
+<body>
+<!--calculate  your age-->
+<p>生年月日をご入力ください</p>
+年
+<select id="year" name="year">
+    <script>
+        for(i=1900;i<2010;i++){
+            document.write("<option value="+i+">"+i+"</option>");
+        }
+    </script>
+</select>　
+月　
+<select id="month" name="month">
+<script>
+    for(i=1;i<13;i++){
+        document.write("<option value="+i+">"+i+"</option>");
+    }
+</script>
+</select>
+日
+<select id="day" name="day">
+    <script>
+        for(i=1;i<32;i++){
+            document.write("<option value="+i+">"+i+"</option>");
+        }
+    </script>
+</select>
+<br>
+<input type="button" id="cal" value="年齢を計算" onclick="cal()"></body>
+<br>
+今年は
+<span id="age">100</span>
+歳
+</body>
+</html>
