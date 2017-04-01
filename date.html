@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Create a date object with new Date, which represents the current date (now)-->
+<script>
+    var d=new Date();
+    document.write('new Date():'+d)
+</script>
+<br>
+<!--get the year / month / day need to pay attention to is, getMonth () to return the number of months, is based on zero, 0 on behalf of January-->
+<script>
+    var d=new Date();
+    document.write('get year/month/day:');
+    document.write(d.getFullYear());
+    document.write("/");
+    document.write(d.getMonth()+1);
+    document.write("/");
+    document.write(d.getDate());
+</script>
+<br>
+<!--Get: hours:minutes: seconds: milliseconds-->
+<script>
+    var d=new Date();
+    document.write('Get: hours:minutes:seconds:milliseconds');
+    document.write(d.getHours());
+    document.write(":");
+    document.write(d.getMinutes());
+    document.write(":");
+    document.write(d.getSeconds());
+    document.write(":");
+    document.write(d.getMilliseconds());
+</script>
+<br>
+<!--The first few days of the week-->
+<script>
+    var day=new Date().getDay();
+    var weeks=new Array("日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日");
+    document.write("今天是:"+weeks[day]);
+</script>
+</body>
+<body>
+<!--Get the number of milliseconds from 1970/1/1 08:00:00 -->
+<br>
+<script>
+    var time=new Date().getTime();
+    document.write(time);
+</script>
+<!--Set the date object to 2012/12/12 00:00:00-->
+<br>
+<script>
+    var d=new Date();
+    document.write("Modify the date object to the value of the end of the world:");
+    d.setFullYear(2012);
+    d.setMonth(11);
+    d.setDate(12);
+
+    d.setHours(0);
+    d.setMinutes(0);
+    d.setSeconds(0);
+    document.write(d);
+</script>
+</body>
+</html>
