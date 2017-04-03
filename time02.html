@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <p>Print the current time every 1 second</p>
+   <!--The following div is the time shown in the html position-->
+   <!--innerHTML means Modify the contents of the element-->
+    <div id="time"></div>
+    <script>
+        function printTime02() {
+            var d=new Date();
+            var h=d.getHours();
+            var m=d.getMinutes();
+            var s=d.getSeconds();
+            document.getElementById("time").innerHTML=h+":"+m+":"+s;
+        }
+        var t=setInterval(printTime02,1000);
+    </script>
+    <br><br>
+</body>
+</html>

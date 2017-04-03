@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="time">
+<p>The current time is displayed after 3 seconds, and only once</p>
+<script>
+    function printTime() {
+        var d=new Date();
+        var h=d.getHours();
+        var m=d.getMinutes();
+        var s=d.getSeconds();
+        document.getElementById("time").innerHTML=h+":"+m+":"+s;
+    }
+    function showTime3Seconds() {
+        setTimeout(printTime,3000);
+    }
+</script>
+</div>
+<button onclick="showTime3Seconds()">点击后3秒钟后显示当前时间，并且只显示一次</button>
+
+<br>
+
+</body>
+</html>
