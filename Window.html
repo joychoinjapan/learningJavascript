@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--获得文档现实区域的高度和宽度-->
+<script>
+    document.write("文档内容");
+    document.write("文档显示区域的宽度"+window.innerWidth);
+    document.write("<br>");
+    document.write("文档显示区域的高度"+window.innerHeight);
+</script>
+<br>
+<!--获得外部窗体的宽度和高度-->
+<script>
+    document.write("浏览器的宽度"+window.outerWidth);
+    document.write("<br>");
+    document.write("浏览器的高度"+window.outerHeight);
+</script>
+<!--打印浏览器相关信息-->
+<script type="text/javascript">
+    document.write("<p>浏览器产品名称 :");
+    document.write(navigator.appName+"</p>");
+
+    document.write("<p>浏览器版本号 :");
+    document.write(navigator.appVersion+"</p>");
+
+    document.write("<p>浏览器内部代码 :");
+    document.write(navigator.appCodeName+"</p>");
+
+    document.write("<p>浏览器系统 : ");
+    document.write(navigator.platform+"</p>");
+
+    document.write("<p>是否启用Cookies :");
+    document.write(navigator.cookieEnabled+"</p>");
+
+    document.write("<p>浏览器的用户代理报头: ");
+    document.write(navigator.userAgent+"</p>");
+</script>
+<br>
+<script type="text/javascript">
+    document.write("用户的屏幕分辨率:");
+    document.write(screen.width+"*"+screen.height);
+    document.write("<br>");
+    document.write("可用区域大小：");
+    document.write(screen.availWidth+"*"+screen.availHeight);
+    document.write("<br />")
+</script>
+<br>
+<script>
+    function  goBack() {
+        history.back();
+    }
+    function  goBack2() {
+        history.(-2);
+    }
+</script>
+<button onclick="goBack()">返回</button>
+<button onclick="goBack2()">返回上上次</button>
+<br>
+<span>当前时间</span>
+<script>
+    var d=new Date();
+    document.write(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds());
+    function refresh() {
+        location.reload();
+    }
+</script>
+<br><button onclick="refresh()">刷新当前页面</button>
+<br>
+<script>
+    function jump() {
+        location.assign("/");
+    }
+</script>
+<button onclick="jump()">跳转到首页</button>
+</body>
+</html>
