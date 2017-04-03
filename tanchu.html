@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--show warning message-->
+<script>
+    function register() {
+        alert("注册成功");
+    }
+</script>
+<br>
+<button onclick="register()">注册</button>
+<br>
+<!--show confirm message-->
+<script>
+function del() {
+    var d=confirm("是否要删除")
+    //Conform Returns a Boolean true or false of the base type
+    alert(typeof d+" "+d);
+}
+</script>
+
+<br>
+<button onclick="del()">删除</button>
+<br>
+
+<!--input-->
+<script>
+    function p() {
+        var name=prompt("请输入用户名");
+        alert("您输入的用户名是"+name);
+
+    }
+</script>
+<br>
+<button onclick="p()">请输入用户名</button>
+</body>
+</html>
