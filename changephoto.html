@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function switch1() {
+        var img=document.getElementById("img");
+        img.src="http://how2j.cn/study/gareen.jpg";
+    }
+    function switch2() {
+        var img=document.getElementById("img");
+        img.attributes["src"].nodeValue="http://how2j.cn/study/katarina.jpg";
+        
+    }
+</script>
+<img id="img" src="http://how2j.cn/study/katarina.jpg" width="100">
+<br>
+<button onclick="switch1()">通过scr属性切换图片1</button>
+<br>
+<button onclick="switch2()">通过属性节点切换图片2</button>
+
+</body>
+</html>
