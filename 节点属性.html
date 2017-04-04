@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="d1">hello HTML DOM</div>
+<script>
+    function p(s) {
+        document.write(s);
+        document.write("<br>");
+    }
+    var div1=document.getElementById("d1");
+    p("name of the document's node "+document.nodeName);
+    p("document has no nodeValue :"+document.nodeValue);
+    p("The node name of the element node div "+div1.nodeName);
+    p("element node has no nodeValue"+div1.nodeValue);
+    p("The node name of the attribute node of div "+div1.attributes[0].nodeName);
+    p("attribute node has node value: "+div1.attributes[0].nodeValue)
+    p("The node name of the content node of div "+div1.childNodes[0].nodeName);
+    p("content node has node value: "+div1.childNodes[0].nodeValue)
+
+</script>
+<br>
+<div id="d2">hello HTML DOM</div>
+<script>
+    function changeDiv1() {
+        document.getElementById("d2").childNodes[0].nodeValue="通过childNode[0].value改变内容";
+    }
+    function changeDiv2() {
+        document.getElementById("d2").innerHTML="通过innerHTML改变内容";
+    }
+</script>
+<button onclick="changeDiv1()">通过childNode[0].value改变内容</button>
+<button onclick="changeDiv2()">通过innerHTML改变内容</button>
+<br>
+
+<div id="d3">hello HTML DOM</div>
+<script>
+    function get() {
+        var input1=document.getElementById("input1");
+        var s="id="+input1.id+"<br>";
+        s+="value="+input1.value+"<br>";
+        s+="class="+input1.className+"<br>";
+        s+="test="+input1.attributes["test"].nodeValue+"<br>";
+        s+="test="+input1.getAttribute("test")+"<br>";
+
+        document.getElementById("d3").innerHTML=s;
+
+    }
+
+
+
+
+</script>
+<input id="input1" class="class1 class2" test="t1" value="这是一个输入框">
+<br>
+<button onclick="get()">获取input的属性</button>
+<div style="height:30px"></div>
+</body>
+</html>

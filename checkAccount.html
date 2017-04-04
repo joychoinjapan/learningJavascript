@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+
+    function getValue(id) {
+        return document.getElementById(id).value;
+    }
+    function verification() {
+        var exist=document.getElementById("message_exist");
+        var notExist=document.getElementById("message_not_exist");
+        var noInput=document.getElementById("message_noInput");
+        notExist.style.display="none";
+        exist.style.display="none";
+        var account=getValue("account");
+        var c=account.charAt(0);
+        if(0!=account.length){
+            if('a'==c || 'A'==c)
+                exist.style.display="inline";
+            else
+                notExist.style.display="inline";
+        }else {
+            noInput.style.display="inline";
+        }
+
+    }
+</script>
+<input id="account">
+<input type="button" value="验证" onclick="verification()">
+<span id="message_exist" style="color: red;display: none;">账号已经存在</span>
+<span id="message_noInput" style="color: darkred;display: none;">请输入账号</span>
+<span id="message_not_exist" style="color: green;display: none;">账号可以使用</span>
+</body>
+</html>
